@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@types/node": "^17.0.18",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.9.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "name": "manual-rapazes-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts"
+  }
+}
