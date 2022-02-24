@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Rules" ALTER COLUMN "status" SET DEFAULT E'PENDING';
