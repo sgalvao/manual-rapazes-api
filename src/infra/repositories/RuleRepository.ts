@@ -11,6 +11,9 @@ export class RuleRepository {
         description: params.description,
         authorId: params.authorId,
       },
+      include: {
+        author: true,
+      },
     });
 
     return rule;

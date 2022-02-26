@@ -12,7 +12,6 @@ export default gql`
   input RulesInput {
     name: String!
     description: String!
-    authorId: Int!
   }
 
   extend type Query {

@@ -32,7 +32,12 @@ export const authDirective = (schema, directiveName) => {
           if (!user) {
             throw new ForbiddenError("Not authorized");
           }
-          return resolve(source, args, Object.assign(context, { user }), info);
+          return resolve(
+            source,
+            args,
+            Object.assign(context, { userId: user.id }),
+            info
+          );
         };
         return fieldConfig;
       }
