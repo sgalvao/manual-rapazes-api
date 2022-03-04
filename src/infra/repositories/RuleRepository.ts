@@ -27,4 +27,34 @@ export class RuleRepository {
     });
     return rules;
   }
+
+  async approveRule(ruleId: number): Promise<CreateRuleService.Result> {
+    const rule = await prisma.rules.update({
+      where: {
+        id: ruleId,
+      },
+      data: {
+        status: "APPROVED",
+      },
+    });
+
+    return rule;
+  }
+
+  async loadById(ruleId: number): Promise<CreateRuleService.Result[]> {
+    const rules = await prisma.rules.findMany({
+      where: {
+        id: ruleId,
+      },
+      include: {
+        votes: {
+          where: {
+            value: true,
+          },
+        },
+      },
+    });
+
+    return rules;
+  }
 }

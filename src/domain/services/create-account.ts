@@ -12,6 +12,8 @@ export class CreateAccountService {
   public async create(
     param: CreateAccountService.Params
   ): Promise<CreateAccountService.Result> {
+    console.log(param);
+
     const passwordEncrypted = await this.hashProvider.createHash(
       param.password,
       10

@@ -1,5 +1,4 @@
 import { Rule } from "@/domain/entities/";
-import { HashProvider } from "@/infra/providers";
 import { RuleRepository } from "@/infra/repositories";
 
 export class CreateRuleService {

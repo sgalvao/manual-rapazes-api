@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Votes" ALTER COLUMN "value" DROP DEFAULT;
