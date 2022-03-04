@@ -20,7 +20,7 @@ const makeAuthentication = () => {
 exports.default = {
     Query: {
         login: (_, args) => {
-            console.log(args);
+            console.log("🚀 ~ file: user.ts ~ line 31 ~ args", args);
             return makeAuthentication().auth(args);
         },
     },

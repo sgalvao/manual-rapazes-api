@@ -17,7 +17,7 @@ class AuthenticationService {
         if (!user) {
             throw new Error("User not found");
         }
-        const isValidPassword = await this.hashProvider.compareHash(user.password, params.password);
+        const isValidPassword = await this.hashProvider.compareHash(params.password, user.password);
         console.log("🚀 ~ file: authentication.ts ~ line 27 ~ AuthenticationService ~ auth ~ isValidPassword", isValidPassword);
         if (!isValidPassword) {
             throw new Error(" password or username invalid!");

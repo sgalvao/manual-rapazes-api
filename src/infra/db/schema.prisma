@@ -15,12 +15,13 @@ model User {
   id        Int      @id @default(autoincrement())
   name      String
   email     String
-  avatar    String
+  avatar    Avatar   @relation(fields: [avatarId], references: [id])
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   rules     Rules[]
   votes     Votes[]
+  avatarId  Int @default(1)
 }
 
 model Rules {
@@ -44,4 +45,12 @@ model Votes {
   updatedAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id])
   rule      Rules    @relation(fields: [ruleId], references: [id])
+}
+
+model Avatar {
+  id        Int      @id @default(autoincrement())
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  User      User[]
 }

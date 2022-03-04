@@ -13,15 +13,14 @@ exports.default = (0, apollo_server_express_1.gql) `
   input RulesInput {
     name: String!
     description: String!
-    authorId: Int!
   }
 
   extend type Query {
-    findAllRules: [Rules]
+    findAllRules: [Rules] @auth
   }
 
   extend type Mutation {
-    createRule(rule: RulesInput): Rules
+    createRule(rule: RulesInput): Rules @auth
   }
 `;
 //# sourceMappingURL=rule.js.map

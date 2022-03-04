@@ -1,4 +1,4 @@
 import userResolver from "./user";
 import ruleResolver from "./rule";
-
-export default [userResolver, ruleResolver];
+import avatarResolver from "./avatar";
+export default [userResolver, ruleResolver, avatarResolver];

@@ -4,21 +4,22 @@ export default gql`
   type User {
     id: Int
     name: String
-    avatar: String
     email: String
+    avatar: Avatar
   }
 
   input UserInput {
     name: String!
     email: String!
     password: String!
-    avatar: String
+    avatarId: Int!
   }
 
   type UserResult {
     id: Int
     name: String
-    avatar: String
+    avatar: Avatar
+    avatarId: Int
     email: String
     token: String
   }

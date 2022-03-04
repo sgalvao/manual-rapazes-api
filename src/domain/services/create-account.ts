@@ -1,6 +1,7 @@
 import { User } from "@/domain/entities/User";
 import { HashProvider } from "@/infra/providers/hash-provider";
 import { UsersRepository } from "@/infra/repositories/UserRepository";
+import { Avatar } from "../entities";
 
 export class CreateAccountService {
   constructor(
@@ -28,7 +29,7 @@ export namespace CreateAccountService {
     id: number;
     name: string;
     email: string;
-    avatar: string;
+    avatarId: number;
     password: string;
   };
   export type Result = User;

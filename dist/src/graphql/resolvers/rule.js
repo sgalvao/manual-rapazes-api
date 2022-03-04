@@ -16,9 +16,9 @@ const makeFindRules = () => {
 exports.default = {
     Query: { findAllRules: () => makeFindRules().findAll() },
     Mutation: {
-        createRule: async (_, { rule }) => {
+        createRule: async (_, { rule }, { userId }) => {
             console.log("🚀 ~ file: rule.ts ~ line 14 ~ createRule: ~ rule", rule);
-            return makeCreateRule().create(rule);
+            return makeCreateRule().create({ ...rule, authorId: userId });
         },
     },
 };
