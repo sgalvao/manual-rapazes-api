@@ -9,10 +9,10 @@ const makeCreateVote = () => {
 
 export default {
   Mutation: {
-    createVote: (_, { args }, { userId }) => {
-      console.log(args);
+    createVote: (_, { ruleId, value }, { userId }) => {
       makeCreateVote().create({
-        ...args,
+        ruleId,
+        value,
         userId,
       });
     },

@@ -9,9 +9,6 @@ export class CreateVoteService {
     params: CreateVoteService.Params
   ): Promise<CreateVoteService.Result> {
     console.log("Service: ", params);
-    if (params.value === undefined) {
-      throw new Error("Você deve informar um valor para votar");
-    }
 
     return this.voteRepository.vote(params);
   }
