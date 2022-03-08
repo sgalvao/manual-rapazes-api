@@ -19,6 +19,7 @@ export class VoteRepository {
       data: {
         value: params.value,
         ruleId: params.ruleId,
+        userId: params.userId,
       },
     });
 
