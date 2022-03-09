@@ -5,12 +5,6 @@ export class UsersRepository {
   async create(
     params: CreateAccountService.Params
   ): Promise<CreateAccountService.Result> {
-    const validateEmail = await this.findByEmail(params.email);
-
-    if (validateEmail) {
-      throw new Error("Email already exists");
-    }
-
     const user = await prisma.user.create({
       data: {
         email: params.email,

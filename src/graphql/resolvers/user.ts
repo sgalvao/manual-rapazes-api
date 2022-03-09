@@ -1,14 +1,17 @@
 import { CreateAccountService } from "@/domain/services";
 import { AuthenticationService } from "@/domain/services/authentication";
 import { HashProvider, JwtProvider } from "@/infra/providers";
+import { WhitelistRepository } from "@/infra/repositories";
 import { UsersRepository } from "@/infra/repositories/UserRepository";
 
 const makeCreateAccount = () => {
   const userRepository = new UsersRepository();
   const hashProvider = new HashProvider();
+  const whitelistRepository = new WhitelistRepository();
   const createAccountService = new CreateAccountService(
     userRepository,
-    hashProvider
+    hashProvider,
+    whitelistRepository
   );
 
   return createAccountService;
