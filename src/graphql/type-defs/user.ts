@@ -26,6 +26,7 @@ export default gql`
 
   extend type Query {
     login(email: String!, password: String!): UserResult
+    findById(id: Int!): UserResult
   }
 
   extend type Mutation {

@@ -1,5 +1,6 @@
 import { CreateAccountService } from "@/domain/services";
 import { AuthenticationService } from "@/domain/services/authentication";
+import { LoadUserByIdService } from "@/domain/services/";
 import { HashProvider, JwtProvider } from "@/infra/providers";
 import { WhitelistRepository } from "@/infra/repositories";
 import { UsersRepository } from "@/infra/repositories/UserRepository";
@@ -15,6 +16,12 @@ const makeCreateAccount = () => {
   );
 
   return createAccountService;
+};
+
+const makeLoadAccountById = () => {
+  const userRepository = new UsersRepository();
+  const loadAccountByIdService = new LoadUserByIdService(userRepository);
+  return loadAccountByIdService;
 };
 
 const makeAuthentication = () => {
@@ -33,6 +40,9 @@ export default {
     login: (_, args) => {
       console.log("🚀 ~ file: user.ts ~ line 31 ~ args", args);
       return makeAuthentication().auth(args);
+    },
+    findById: (_, args) => {
+      return makeLoadAccountById().load(args);
     },
   },
   Mutation: {
