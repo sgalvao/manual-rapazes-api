@@ -41,8 +41,8 @@ export default {
       console.log("🚀 ~ file: user.ts ~ line 31 ~ args", args);
       return makeAuthentication().auth(args);
     },
-    findById: (_, args) => {
-      return makeLoadAccountById().load(args);
+    loadUser: (_, { userId }) => {
+      return makeLoadAccountById().load(userId);
     },
   },
   Mutation: {
