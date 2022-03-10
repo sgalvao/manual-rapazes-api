@@ -9,7 +9,6 @@ export class AvatarRepository {
         id,
       },
     });
-
     return avatar;
   }
 
