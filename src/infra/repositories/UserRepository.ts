@@ -28,7 +28,7 @@ export class UsersRepository {
   }
 
   async findById(id: number): Promise<CreateAccountService.Result> {
-    const user = await prisma.user.findFirst({
+    const user = await prisma.user.findUnique({
       where: { id },
       include: {
         avatar: true,

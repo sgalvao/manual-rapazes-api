@@ -26,7 +26,7 @@ export default gql`
 
   extend type Query {
     login(email: String!, password: String!): UserResult
-    loadUser(id: Int!): UserResult @auth
+    loadUser: UserResult @auth
   }
 
   extend type Mutation {

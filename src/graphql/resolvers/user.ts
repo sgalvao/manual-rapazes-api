@@ -42,7 +42,7 @@ export default {
       return makeAuthentication().auth(args);
     },
     loadUser: (_, args, { userId }) => {
-      return makeLoadAccountById().load(args);
+      return makeLoadAccountById().load(userId);
     },
   },
   Mutation: {
