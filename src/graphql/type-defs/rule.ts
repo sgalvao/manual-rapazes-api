@@ -7,6 +7,7 @@ export default gql`
     description: String
     status: String
     author: User
+    createdAt: String
   }
 
   input RulesInput {
